@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Планер дел</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <header class="site-header">
+      <h1>Планер дел </h1>
+    </header>
+
+    <main class="main-content">
+      <div id="loginScreen" class="screen">
+        <div class="auth-card">
+          <h2>Добро пожаловать!</h2>
+          <input type="text" id="loginUsername" placeholder="Ваш логин">
+          <input type="password" id="loginPassword" placeholder="Ваш пароль">
+          <button id="registerBtn">Создать аккаунт</button>
+          <button id="loginBtn">Войти в систему</button>
+          <div id="authMessage"></div>
+        </div>
+      </div>
+
+      <div id="plannerScreen" class="screen hidden">
+        <div class="planner-header">
+          <h2>Ваш план на сегодня</h2>
+          <button id="logoutBtn">Выйти</button>
+        </div>
+
+        <div class="calendar-controls">
+          <button id="prevMonthBtn" class="nav-btn">❮</button>
+          <h3 id="currentMonthYear"></h3>
+          <button id="nextMonthBtn" class="nav-btn">❯</button>
+        </div>
+        <div id="calendarGrid" class="calendar-grid"></div>
+
+        <div id="foldersBar" class="folders-bar"></div>
+
+        <button id="addFolderBtn" class="add-folder-trigger">+</button>
+
+        <div class="task-input-row">
+          <input type="text" id="taskInput" placeholder="Добавьте новую задачу..." class="task-input-field">
+          <select id="prioritySelect" class="priority-select">
+            <option value="low">Низкий 🟢</option>
+            <option value="medium" selected>Средний 🟡</option>
+            <option value="high">Высокий 🔴</option>
+          </select>
+          <button id="addTaskBtn" class="add-task-btn">+</button>
+        </div>
+
+        <ul id="taskList" class="task-list"></ul>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p>Планер дел</p>
+      <p>Контакты разработчика: tg: @rafff_ww</p>
+    </footer>
+  </div>
+
+  <script src="auth.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
